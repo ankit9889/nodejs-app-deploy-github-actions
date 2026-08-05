@@ -1,4 +1,4 @@
-name: Deply Node JS App to Hostinger
+name: Deploy Node JS App to Hostinger
 
 on:
   push:
@@ -7,18 +7,18 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubantu-latest
+    runs-on: ubuntu-latest
 
-    setps:
+    steps:
       - name: Checkout Code
-        usees: acions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Deploy Via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: {{ secrets.SSH_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           script: |
             cd /root/nodejs-app-deploy-github-actions
             git pull
