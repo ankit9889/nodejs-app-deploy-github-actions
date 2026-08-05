@@ -5,7 +5,7 @@ const PORT = process.env.PORT ?? 8080;
 
 app.get('/', (req, res) => {
     res.json({
-        msg: 'Hello from the server'
+        msg: 'Hello from the server and i am on production server | HOstinger'
     });
 });
 
