@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs--on: ubantu-latest
+    runs-on: ubantu-latest
 
     setps:
       - name: Checkout Code
